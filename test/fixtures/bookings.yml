@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  current_date: 2017-10-24
+  start_day: 2017-10-24
+  end_day: 2017-10-24
+  days_quantity: 1
+  adults: 1
+  kids: 1
+  status: MyString
+  price_total: 9.99
+  guest: one
+  booking_provider: one
+  room: one
+
+two:
+  current_date: 2017-10-24
+  start_day: 2017-10-24
+  end_day: 2017-10-24
+  days_quantity: 1
+  adults: 1
+  kids: 1
+  status: MyString
+  price_total: 9.99
+  guest: two
+  booking_provider: two
+  room: two

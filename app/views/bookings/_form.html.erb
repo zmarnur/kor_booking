@@ -1,0 +1,64 @@
+<%= form_for @booking do |f| %>
+
+  <div>
+    <%= f.label :Od %>
+    <%= f.text_field :start_day %>
+  </div>
+  <div>
+    <%= f.label :Do %>
+    <%= f.text_field :end_day %>
+  </div>
+  <div>
+    <%= f.label :Dlugosc_pobytu %>
+    <%= f.text_field :days_quantity %>
+  </div>
+  <div>
+    <%= f.label :Dorosli %>
+    <%= f.text_field :adults %>
+  </div>
+  <div>
+    <%= f.label :Dzieci %>
+    <%= f.text_field :kids %>
+  </div>
+  <div>
+    <%= f.label :Status %>
+    <%= f.text_field :status %>
+  </div>
+  <div>
+    <%= f.label :Cena %>
+    <%= f.text_field :price_total %>
+  </div>
+
+<br>
+ 
+ <!--Nested form -->
+
+  <div>
+    <p><strong>Klienci:</strong></p>
+    <%= f.fields_for :guest do |g| %>
+        <div class="form-group">
+            <%= g.label :name, "Imie" %>
+            <%= g.text_field :first_name, class: "form-control"%>
+        </div>      
+        <div class="form-group">
+            <%= g.label :name, "Nazwisko" %>
+            <%= g.text_field :last_name, class: "form-control"%>
+        </div>      
+        <div class="form-group">
+            <%= g.label :name, "email" %>
+            <%= g.text_field :email, class: "form-control"%>
+        </div>      
+        <div class="form-group">
+            <%= g.label :name, "Telefon" %>
+            <%= g.text_field :phone, class: "form-control"%>
+        </div>      
+    <% end %>
+  </div>
+  
+<!--End Nested form -->
+
+<%= f.submit "Dodaj wpis", class: "btn btn-primary"%>
+<% end %>
+
+
+

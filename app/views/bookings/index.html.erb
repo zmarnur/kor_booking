@@ -1,0 +1,47 @@
+<h3>Lista rezerwacji</h3>
+<br>
+<p><%= link_to "Nowa Rezerwacja", new_booking_path, class: "btn btn-success" %></p>
+
+<!-- Responsive tabel -->
+<div class="table-responsive">
+    <table class="table"> 
+        <thead>
+     <tr>
+          <th>ID</th>
+          <th>Od</th>
+          <th>Do</th>
+          <th>Ilość dni</th>
+          <th>Dorośli</th>
+          <th>Dzieci</th>
+          <th>Cena</th>
+          <th>Status</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+          <th>email</th>
+          <th>Telefon</th>          
+    </tr>
+  </thead>
+  <tbody>
+    <% @booking.each do |booking| %>
+     <tr>
+            <td><%= booking.id %></td>
+            <td><%= booking.start_day %></td>
+            <td><%= booking.end_day %></td>
+            <td><%= booking.days_quantity %></td>
+            <td><%= booking.adults %></td>
+            <td><%= booking.kids %></td>
+            <td><%= booking.price_total %></td>
+            <td><%= booking.status %></td>
+            
+            <td><%= booking.guest.first_name %></td>
+            <td><%= booking.guest.last_name %></td>
+            <td><%= booking.guest.email %></td>
+            <td><%= booking.guest.phone %></td>
+
+            <td>
+            </td>
+     </tr>
+   <% end %>
+  </tbody>
+</table>
+</div>
