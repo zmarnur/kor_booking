@@ -1,32 +1,89 @@
-<%= form_for @booking do |f| %>
+<%= simple_form_for @booking do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      Dodaj rezerwację
+    </div>
+    <div class="col">
 
-  <div>
-    <%= f.label :Od %>
-    <%= f.text_field :start_day %>
+    </div>
+    <div class="col-1">
+      <%= f.submit "Zapisz", class: "btn btn-primary"%>
+    </div>    
+    <div class="col-1">
+      close
+    </div>
+  </div>  
+<br>
+<br>
+  <div class="row">
+    <div class="col-1">
+      Od
+    </div>
+    <div class="col-5">
+    <%= f.input :start_day, label: false %>
+    </div>
+    <div class="col-1">
+      Status
+    </div>    
+    <div class="col">
+    <%= f.input :status, label: false, collection: ["Brak wpłaty", "zaliczka", "100%", "Anulowano"]%>
+    </div>
   </div>
-  <div>
-    <%= f.label :Do %>
-    <%= f.text_field :end_day %>
+
+  <div class="row">
+    <div class="col-1">
+      Do
+    </div>
+    <div class="col-5">
+    <%= f.input :end_day, label: false %>
+    </div>
+    <div class="col-1">
+      Wartość
+    </div>
+    <div class="col-3">
+    <%= f.input :price_total, label: false %>
+    </div>
+    <div class="col-2">
+    PLN
+    </div>
+    
   </div>
-  <div>
-    <%= f.label :Dlugosc_pobytu %>
-    <%= f.text_field :days_quantity %>
+
+  <div class="row">
+    <div class="col-1">
+      Ilość dni
+    </div>
+    <div class="col-5">
+    <%= f.input :days_quantity, label: false %>
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
   </div>
-  <div>
-    <%= f.label :Dorosli %>
-    <%= f.text_field :adults %>
+
+  <div class="row">
+    <div class="col-1">
+      Dorośli
+    </div>
+    <div class="col-5">
+    <%= f.input :adults, label: false, collection: 1..10  %>
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
   </div>
-  <div>
-    <%= f.label :Dzieci %>
-    <%= f.text_field :kids %>
-  </div>
-  <div>
-    <%= f.label :Status %>
-    <%= f.text_field :status %>
-  </div>
-  <div>
-    <%= f.label :Cena %>
-    <%= f.text_field :price_total %>
+  
+  <div class="row">
+    <div class="col-1">
+      Dzieci
+    </div>
+    <div class="col-5">
+    <%= f.input :kids, label: false, collection: 1..8    %>
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
   </div>
 
 <br>
@@ -36,29 +93,60 @@
   <div>
     <p><strong>Klienci:</strong></p>
     <%= f.fields_for :guest do |g| %>
-        <div class="form-group">
-            <%= g.label :name, "Imie" %>
-            <%= g.text_field :first_name, class: "form-control"%>
-        </div>      
-        <div class="form-group">
-            <%= g.label :name, "Nazwisko" %>
-            <%= g.text_field :last_name, class: "form-control"%>
-        </div>      
-        <div class="form-group">
-            <%= g.label :name, "email" %>
-            <%= g.text_field :email, class: "form-control"%>
-        </div>      
-        <div class="form-group">
-            <%= g.label :name, "Telefon" %>
-            <%= g.text_field :phone, class: "form-control"%>
-        </div>      
+    
+   <div class="row">
+    <div class="col-1">
+      Imię
+    </div>
+    <div class="col-5">
+      <%= g.text_field :first_name, class: "form-control"%>
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+   </div>  
+   
+   <div class="row">
+    <div class="col-1">
+      Nazwisko
+    </div>
+    <div class="col-5">
+      <%= g.text_field :last_name, class: "form-control"%>
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+   </div>     
+
+   <div class="row">
+    <div class="col-1">
+      emial
+    </div>
+    <div class="col-5">
+      <%= g.text_field :email, class: "form-control"%>
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+   </div>     
+   
+   <div class="row">
+    <div class="col-1">
+      Telefon
+    </div>
+    <div class="col-5">
+      <%= g.text_field :phone, class: "form-control"%>
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+   </div>     
+   
     <% end %>
-  </div>
   
 <!--End Nested form -->
 
-<%= f.submit "Dodaj wpis", class: "btn btn-primary"%>
 <% end %>
-
+</div> 
 
 

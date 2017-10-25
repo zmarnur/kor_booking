@@ -18,6 +18,13 @@ def index
   end
   
   def edit
+    @booking = Booking.find(params[:id])
+  end
+  
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update_attributes (booking_params)
+    redirect_to bookings_path
   end
   
     private

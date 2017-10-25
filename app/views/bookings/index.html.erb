@@ -8,23 +8,28 @@
         <thead>
      <tr>
           <th>ID</th>
-          <th>Od</th>
-          <th>Do</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>          
+          <th>Przyjazd</th>
+          <th>Wyjazd</th>
           <th>Ilość dni</th>
           <th>Dorośli</th>
           <th>Dzieci</th>
-          <th>Cena</th>
+          <th>Wartość</th>
           <th>Status</th>
-          <th>Imię</th>
-          <th>Nazwisko</th>
           <th>email</th>
-          <th>Telefon</th>          
+          <th>Telefon</th>   
+          <th>info</th>          
+          
     </tr>
   </thead>
   <tbody>
     <% @booking.each do |booking| %>
      <tr>
             <td><%= booking.id %></td>
+            <td><%= booking.guest.first_name %></td>
+            <td><%= booking.guest.last_name %></td>            
+            
             <td><%= booking.start_day %></td>
             <td><%= booking.end_day %></td>
             <td><%= booking.days_quantity %></td>
@@ -33,12 +38,11 @@
             <td><%= booking.price_total %></td>
             <td><%= booking.status %></td>
             
-            <td><%= booking.guest.first_name %></td>
-            <td><%= booking.guest.last_name %></td>
             <td><%= booking.guest.email %></td>
             <td><%= booking.guest.phone %></td>
 
             <td>
+            <%= link_to "Edytuj", edit_booking_path(booking), class: "btn btn-primary btn-sm" %>    
             </td>
      </tr>
    <% end %>
