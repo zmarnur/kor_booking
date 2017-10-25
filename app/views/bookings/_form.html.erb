@@ -27,7 +27,8 @@
       Status
     </div>    
     <div class="col">
-    <%= f.input :status, label: false, collection: ["Brak wpłaty", "zaliczka", "100%", "Anulowano"]%>
+    <%= f.select(:status, Booking::BOOKING_STATUS) %>
+
     </div>
   </div>
 

@@ -1,4 +1,6 @@
 class Booking < ApplicationRecord
+  BOOKING_STATUS = ["Brak wpłaty", "Zaliczka", "100%", "Anulowano"]
+
   belongs_to :guest ##tells RoR that the Booking will have one user attached to it
   #belongs_to :booking_provider
   #belongs_to :room
