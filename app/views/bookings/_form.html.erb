@@ -93,14 +93,14 @@
 
   <div>
     <p><strong>Klienci:</strong></p>
-    <%= f.fields_for :guest do |g| %>
+    <%= f.simple_fields_for :guest do |g| %>
     
    <div class="row">
     <div class="col-1">
       Imię
     </div>
     <div class="col-5">
-      <%= g.text_field :first_name, class: "form-control"%>
+      <%= g.input :first_name, label: false %>
     </div>
     <div class="col">
       3 of 3
@@ -112,7 +112,7 @@
       Nazwisko
     </div>
     <div class="col-5">
-      <%= g.text_field :last_name, class: "form-control"%>
+      <%= g.input :last_name, label: false%>
     </div>
     <div class="col">
       3 of 3
@@ -121,10 +121,10 @@
 
    <div class="row">
     <div class="col-1">
-      emial
+      email
     </div>
     <div class="col-5">
-      <%= g.text_field :email, class: "form-control"%>
+      <%= g.input :email, label: false %>
     </div>
     <div class="col">
       3 of 3
@@ -136,7 +136,7 @@
       Telefon
     </div>
     <div class="col-5">
-      <%= g.text_field :phone, class: "form-control"%>
+      <%= g.input :phone, label: false%>
     </div>
     <div class="col">
       3 of 3
