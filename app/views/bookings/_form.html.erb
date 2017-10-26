@@ -23,7 +23,7 @@
     <div class="col-5">
     <%= f.input :start_day, label: false %>
     </div>
-    <div class="col-1">
+    <div class="col-2">
       Status
     </div>    
     <div class="col">
@@ -39,13 +39,13 @@
     <div class="col-5">
     <%= f.input :end_day, label: false %>
     </div>
-    <div class="col-1">
+    <div class="col-2">
       Wartość
     </div>
     <div class="col-3">
     <%= f.input :price_total, label: false %>
     </div>
-    <div class="col-2">
+    <div class="col-1">
     PLN
     </div>
     
@@ -58,8 +58,11 @@
     <div class="col-5">
     <%= f.input :days_quantity, label: false %>
     </div>
-    <div class="col">
-      3 of 3
+    <div class="col-2">
+      Pomieszczenie
+    </div>
+    <div class="col-3">
+    <%= collection_select(:booking, :room_id, Room.all, :id, :room_name, {}, {:multiple => false}) %> <!--Select room_name from the Rooms table -->
     </div>
   </div>
 

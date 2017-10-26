@@ -10,7 +10,8 @@
      <tr>
           <th>ID</th>
           <th>Imię</th>
-          <th>Nazwisko</th>          
+          <th>Nazwisko</th> 
+          <th>Apartament</th>
           <th>Przyjazd</th>
           <th>Wyjazd</th>
           <th>Ilość dni</th>
@@ -30,6 +31,8 @@
             <td><%= booking.id %></td>
             <td><%= booking.guest.first_name %></td>
             <td><%= booking.guest.last_name %></td>            
+            
+            <td><%= booking.room_id %></td> 
             
             <td><%= booking.start_day %></td>
             <td><%= booking.end_day %></td>

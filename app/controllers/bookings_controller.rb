@@ -31,7 +31,7 @@ def index
     
 
   def booking_params # Never trust parameters from the scary internet, only allow the white list through.
-    params.require(:booking).permit(:current_date, :start_day, :end_day, :days_quantity, :adults, :kids, :status, :price_total,  guest_attributes: [:id, :first_name, :last_name, :email, :phone])
+    params.require(:booking).permit(:current_date, :start_day, :end_day, :days_quantity, :adults, :kids, :status, :price_total, :room_id, guest_attributes: [:id, :first_name, :last_name, :email, :phone])
 
   
   end

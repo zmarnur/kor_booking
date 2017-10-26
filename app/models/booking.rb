@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
 
   belongs_to :guest ##tells RoR that the Booking will have one user attached to it
   #belongs_to :booking_provider
-  #belongs_to :room
+  belongs_to :room ##tells RoR that the Booking will have one room attached to it
   accepts_nested_attributes_for :guest
 
   ## validations ##
